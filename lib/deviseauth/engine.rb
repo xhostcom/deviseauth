@@ -7,14 +7,12 @@ module Deviseauth
       g.test_framework :rspec
     end 
     
-    initializer 'deviseauth.new_routes'
-    :after => 'action_dispatch.prepare_dispatcher' do |app|
-    ActionDispatch::Routing::Mapper.send :include, 
-    Deviseauth::RouteExtensions 
+    initializer 'deviseauth.new_routes' do |app|
+      app.routes.prepend do
+        mount Deviseauth::Engine => '/deviseauth'
+      end
     end
-   # middleware.use Rack::Cache,
-   # :verbose => true,
-   # :metastore => "file:#{Rails.root}/tmp/dragonfly/cache/meta",
-   # :entitystore => "file:#{Rails.root}/tmp/dragonfly/cache/body"
+   
+   # middleware.use Devise::JWT::Middleware::RevocationManager
   end
 end

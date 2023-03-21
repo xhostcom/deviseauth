@@ -1,6 +1,6 @@
-require "ddeviseauth/version"
+require "deviseauth/version"
 require "deviseauth/engine"
 
-module Rubypress
+module Deviseauth
 autoload :Error, "deviseauth/error"
 end

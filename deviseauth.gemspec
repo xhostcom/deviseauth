@@ -17,4 +17,5 @@ s.require_paths = ["lib"]
 s.add_dependency "rails", ">= 7.0.0"
 s.add_dependency "devise", ">= 4.8.0"
 s.add_dependency 'devise-jwt', '~> 0.9.0'
+s.add_dependency 'rspec-rails', '~> 5.0.0'
 end
