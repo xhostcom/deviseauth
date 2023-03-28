@@ -14,8 +14,8 @@ s.test_files  = `git ls-files -- {test,spec,features}/*`.split("\x0")
 s.bindir      = "exe"
 s.executables = s.files.grep(%r{^exe/}) { |f| File.basename(f) }
 s.require_paths = ["lib"]
-s.add_dependency "rails", ">= 7.0.0"
-s.add_dependency "devise", ">= 4.8.0"
-s.add_dependency 'devise-jwt', '~> 0.9.0'
+s.add_dependency "rails", ">= 7.0.4"
+s.add_dependency "devise", ">= 4.8.3"
+s.add_dependency 'jwt', '~> 2.7'
 s.add_dependency 'rspec-rails', '~> 5.0.0'
 end
